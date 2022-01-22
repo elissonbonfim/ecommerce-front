@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HomeComponent } from './views/home/home.component';
 import { ProdutoListComponent } from './views/produto-list/produto-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProdutoListComponent } from './views/produto-list/produto-list.componen
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

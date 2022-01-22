@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Produto } from '../model/produto';
+import { ResponsePageable } from '../model/responsePageable';
 
 
 @Injectable({ providedIn: 'root' })
-export class LiveService {
+export class ProdutoService {
 
-    apiUrl = 'http://localhost:8080/produto';
+    apiUrl = '/api';
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
@@ -19,8 +20,8 @@ export class LiveService {
         private httpClient: HttpClient
     ) {}
 
-    public getProdutos(flag: string): Observable<Produto> {
-        return this.httpClient.get<Produto>(this.apiUrl + flag);
+    public getProdutos(flag: string): Observable<ResponsePageable> {
+        return this.httpClient.get<ResponsePageable>(this.apiUrl + flag);
     }
 
 }
